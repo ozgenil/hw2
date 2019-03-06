@@ -30,4 +30,10 @@ public class TestUtil {
     int[] array = {0, 1, 2};
     c.compute(array);
   }
+  
+  @Test
+  public void testdivsum() { 
+  int[] array = {3,3,3,3,3};
+  assertEquals(true, c.compute(array));   
+  }
 }
