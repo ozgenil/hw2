@@ -28,5 +28,12 @@ public class TestCompute {
 	 when(c.mq.size()).thenReturn(0);
 	 assertEquals(-1, c.countNumberOfOccurrences(""));
   } 
+	
+  @Test
+  public void testsize(){
+	 c = new Compute(mq);
+	 when(c.mq.size()).thenReturn(5);
+	 assertEquals(0, c.countNumberOfOccurrences(""));
+  } 
      
 }
