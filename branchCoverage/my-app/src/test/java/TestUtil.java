@@ -25,4 +25,9 @@ public class TestUtil {
   assertEquals(false, c.compute(new int[2]));   
   }
   
+  @Test(expected = RuntimeException.class)
+  public void testRuntimeException(){
+    int[] array = {0, 1, 2};
+    c.compute(array);
+  }
 }
