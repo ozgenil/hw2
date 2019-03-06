@@ -4,9 +4,16 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 import org.junit.Test;
+import org.junit.Before;
 
 public class TestCompute {
   Compute c;
+  MessageQueue mq;
+  
+  @Before
+  public void setUp() {
+   mq = mock(MessageQueue.class);
+  }
 
   @Test
   public void example() {
@@ -14,4 +21,12 @@ public class TestCompute {
     c = new Compute(mq);
     assertTrue(true);
   }
+  
+  @Test
+  public void zerosize(){
+	 c = new Compute(mq);
+	 when(c.mq.size()).thenReturn(0);
+	 assertEquals(-1, c.countNumberOfOccurrences(""));
+  } 
+     
 }
