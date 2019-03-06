@@ -40,9 +40,18 @@ public class TestCompute {
   public void testContains() {
 	c = new Compute(mq);
    	when(mq.size()).thenReturn(5);
-	when(mq.contains(anyString())).thenReturn(false);
-       
+	when(mq.contains(anyString())).thenReturn(false);       
     	assertEquals(0, c.countNumberOfOccurrences("abc"));
+  }
+	
+  @Test
+  public void testCounter() {
+	c = new Compute(mq);
+    	when(mq.size()).thenReturn(2);
+	when(mq.contains(anyString())).thenReturn(true);
+    	when(c.mq.getAt(0)).thenReturn("abc");
+	when(c.mq.getAt(1)).thenReturn("abcd");
+    	assertEquals(1, c.countNumberOfOccurrences("abc"));
   }
      
 }
