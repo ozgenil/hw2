@@ -36,4 +36,11 @@ public class TestUtil {
   int[] array = {3,3,3,3,3};
   assertEquals(true, c.compute(array));   
   }
+  
+  @Test
+  public void testnotdivsum() { 
+  int[] array = {3,2,2,2,2};
+  assertEquals(false, c.compute(array));   
+  }
+  
 }
